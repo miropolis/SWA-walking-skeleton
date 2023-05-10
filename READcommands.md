@@ -4,4 +4,10 @@ Stop the walking skeleton `docker-compose stop` or CTRL + C
 
 Stop the walking skeleton and delete database contents `docker-compose down`
 
-Test commit
+Open psql console (in separate terminal) to directly write SQL commands
+`docker exec -it database-server psql -U username database`
+
+Database commands (ALWAYS put semicolon at end): `SELECT * FROM items;`
+`INSERT INTO items (id, name) VALUES (DEFAULT, 'Johannes');` OR
+`INSERT INTO items VALUES (DEFAULT, 'Johannes');` OR
+`INSERT INTO items (name) VALUES ('Johannes');`
