@@ -16,4 +16,4 @@ HTTP calls
 curl "localhost:7777"
 curl "localhost:7777/todos"
 curl "localhost:7777/todos/3"
-curl -X POST -d '{"name": "hamburger"}' "localhost:7777/todos"
+curl -X POST -d '{"item": "hamburger"}' "localhost:7777/todos"
