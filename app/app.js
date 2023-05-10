@@ -34,9 +34,14 @@ const handleGetItems = async (request) => {
 const handlePostItems = async (request) => {
   // assuming that the request has a json object and that
   // the json object has a property name
-  const item = await request.json();
+  try {
+    const item = await request.json();
+    await sql`INSERT INTO todos (item) VALUES (${item.name})`;
+  } catch (error) {
+    console.error(error);
+    return new Response("NOT OK", { status: 400 });
+  }
 
-  await sql`INSERT INTO todos (item) VALUES (${item.name})`;
   return new Response("OK", { status: 200 });
 };
 
