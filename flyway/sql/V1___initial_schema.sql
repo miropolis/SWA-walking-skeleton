@@ -1,4 +1,4 @@
-CREATE TABLE items (
+CREATE TABLE todos (
   id SERIAL PRIMARY KEY,
-  name TEXT NOT NULL
+  item TEXT NOT NULL
 );

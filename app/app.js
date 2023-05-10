@@ -2,7 +2,7 @@ import { serve } from "./deps.js";
 import { sql } from "./database.js";
 
 /*const logNames = async () => {
-  const result = await sql`SELECT * FROM items`;
+  const result = await sql`SELECT * FROM todos`;
   console.log(result);
 };
 
@@ -18,14 +18,14 @@ const handleGetRoot = async (request) => {
 
 const handleGetItem = async (request, urlPatternResult) => {
   const id = urlPatternResult.pathname.groups.id;
-  const items = await sql`SELECT * FROM items WHERE id = ${id}`;
+  const items = await sql`SELECT * FROM todos WHERE id = ${id}`;
 
   // assuming that there's always an item that matches the id
   return Response.json(items[0]);
 };
 
 const handleGetItems = async (request) => {
-  const items = await sql`SELECT * FROM items`;
+  const items = await sql`SELECT * FROM todos`;
   return Response.json(items);
 };
 
@@ -34,7 +34,7 @@ const handlePostItems = async (request) => {
   // the json object has a property name
   const item = await request.json();
 
-  await sql`INSERT INTO items (name) VALUES (${item.name})`;
+  await sql`INSERT INTO todos (item) VALUES (${item.name})`;
   return new Response("OK", { status: 200 });
 };
 
