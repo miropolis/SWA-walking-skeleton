@@ -11,3 +11,9 @@ Database commands (ALWAYS put semicolon at end): `SELECT * FROM items;`
 `INSERT INTO items (id, name) VALUES (DEFAULT, 'Johannes');` OR
 `INSERT INTO items VALUES (DEFAULT, 'Johannes');` OR
 `INSERT INTO items (name) VALUES ('Johannes');`
+
+HTTP calls
+curl "localhost:7777"
+curl "localhost:7777/items"
+curl "localhost:7777/items/3"
+curl -X POST -d '{"name": "hamburger"}' "localhost:7777/items"
