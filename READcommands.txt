@@ -7,13 +7,13 @@ Stop the walking skeleton and delete database contents `docker-compose down`
 Open psql console (in separate terminal) to directly write SQL commands
 `docker exec -it database-server psql -U username database`
 
-Database commands (ALWAYS put semicolon at end): `SELECT * FROM items;`
-`INSERT INTO items (id, name) VALUES (DEFAULT, 'Johannes');` OR
-`INSERT INTO items VALUES (DEFAULT, 'Johannes');` OR
-`INSERT INTO items (name) VALUES ('Johannes');`
+Database commands (ALWAYS put semicolon at end): `SELECT * FROM todos;`
+`INSERT INTO todos (id, item) VALUES (DEFAULT, 'Johannes');` OR
+`INSERT INTO todos VALUES (DEFAULT, 'Johannes');` OR
+`INSERT INTO todos (item) VALUES ('Johannes');`
 
 HTTP calls
 curl "localhost:7777"
-curl "localhost:7777/items"
-curl "localhost:7777/items/3"
-curl -X POST -d '{"name": "hamburger"}' "localhost:7777/items"
+curl "localhost:7777/todos"
+curl "localhost:7777/todos/3"
+curl -X POST -d '{"name": "hamburger"}' "localhost:7777/todos"

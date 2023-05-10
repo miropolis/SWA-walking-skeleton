@@ -41,17 +41,17 @@ const handlePostItems = async (request) => {
 const urlMapping = [
   {
     method: "GET",
-    pattern: new URLPattern({ pathname: "/items/:id" }),
+    pattern: new URLPattern({ pathname: "/todos/:id" }),
     fn: handleGetItem,
   },
   {
     method: "GET",
-    pattern: new URLPattern({ pathname: "/items" }),
+    pattern: new URLPattern({ pathname: "/todos" }),
     fn: handleGetItems,
   },
   {
     method: "POST",
-    pattern: new URLPattern({ pathname: "/items" }),
+    pattern: new URLPattern({ pathname: "/todos" }),
     fn: handlePostItems,
   },
   {
